@@ -23,6 +23,8 @@ async def on_ready():
 async def start(ctx):
 	if ctx.author.id in access:
 		invites = len(await ctx.guild.invites())
+		if invites == 0:
+			return await ctx.send(f"[`ERROR`](https://github.com/notxVirus) | There's no invites on this Discord server.")
 		msg = await ctx.send(f"Starting the process of revoking server invites.\nSending logs in Command Prompt.\nServer invites amount: **{invites}**")
 		await ctx.send("Developed by [xVirus](https://github.com/notxVirus)")
 		a = 0
